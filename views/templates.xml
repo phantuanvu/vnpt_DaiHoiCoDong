@@ -1,0 +1,60 @@
+<openerp>
+    <data>
+
+        <record id="bieu_quyet_form_view" model="ir.ui.view">
+            <field name="name">Bieu Quyet Form View</field>
+            <field name="model">bieu_quyet.bieu_quyet</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="day"/>
+                            <field name="name"/>
+                            <field name="last_name"/>
+                            <field name="co_phan"/>
+                            <field name="hinh_thuc"/>
+                            <field name="chi_tiet"/>
+                            <field name="gender"/>
+                            <field name="is_active"/>
+                            <field name="birth_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bieu_quyet_tree_view" model="ir.ui.view">
+            <field name="name">Bieu Quyet Tree View</field>
+            <field name="model">bieu_quyet.bieu_quyet</field>
+            <field name="arch" type="xml">
+                <tree string="Bieu_Quyets">
+                    <field name="day"/>
+                    <field name="name"/>
+                    <field name="last_name"/>
+                    <field name="co_phan"/>
+                    <field name="hinh_thuc"/>
+                    <field name="chi_tiet"/>
+                    <field name="gender"/>
+                    <field name="is_active"/>
+                    <field name="birth_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_bieu_quyet_view" model="ir.actions.act_window">
+            <field name="name">Bieu Quyet Tree View</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bieu_quyet.bieu_quyet</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Chưa có dữ liệu
+              </p>
+            </field>
+        </record>
+        <menuitem id="menu_bieu_quyet_view" name="menu_bieu_quyet" parent="" action="action_bieu_quyet_view" sequence="85"/>
+        <menuitem id="menu_bieu_quyet" name="Bieu_Quyets" parent="" action="bieu_quyet_tree_view" sequence="10"/>
+        <menuitem id="Bieu_Quyets info" name="Bieu_Quyets_info" parent="" action="Bieu_Quyets" sequence="10"/>
+              action ="bieu_quyets_bieu_quyets_action"/>
+    </data>
+</openerp>
